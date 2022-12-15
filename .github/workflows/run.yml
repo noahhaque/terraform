@@ -28,13 +28,12 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
       
-    - name: Terraform init and apply
+    - name: Terraform init, apply and destroy
       working-directory: ./ec2-deploy
       run: | 
        terraform init
        terraform apply -auto-approve
-       terraform output ip_addresses
-       terraform destroy
+       terraform destroy -auto-approve
 
       
       
