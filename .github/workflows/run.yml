@@ -3,7 +3,7 @@ name: Terraform
 on:
   push:
     branches:
-      - testing
+      - main
 
 jobs:
   build:
@@ -35,6 +35,6 @@ jobs:
        terraform apply -auto-approve
        terraform output ip_addresses
        terraform destroy
-       
+
       
       
